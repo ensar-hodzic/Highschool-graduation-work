@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 05, 2022 at 06:52 PM
+-- Generation Time: May 01, 2022 at 06:18 PM
 -- Server version: 5.5.54
 -- PHP Version: 7.4.26
 
@@ -34,7 +34,18 @@ CREATE TABLE IF NOT EXISTS `artikal` (
   `vrsta_artikla` varchar(40) DEFAULT NULL,
   `cijena` double DEFAULT NULL,
   PRIMARY KEY (`artikal_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `artikal`
+--
+
+INSERT INTO `artikal` (`artikal_id`, `naziv_artikla`, `vrsta_artikla`, `cijena`) VALUES
+(1, 'Playstation 5', 'Konzola', 1200),
+(2, 'Samsung Galaxy S20 FE', 'Mobitel', 690),
+(3, 'Apple Airpods', 'Slušalice', 150),
+(4, 'Logitech G220', 'Miš', 60),
+(5, 'LG Ultrafine 5K', 'Monitor', 1000);
 
 -- --------------------------------------------------------
 
@@ -53,7 +64,17 @@ CREATE TABLE IF NOT EXISTS `kupac` (
   `username` varchar(40) DEFAULT NULL,
   `password` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`kupac_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `kupac`
+--
+
+INSERT INTO `kupac` (`kupac_id`, `ime`, `prezime`, `grad`, `adresa`, `telefon`, `username`, `password`) VALUES
+(1, 'Ensar', 'Hodžić', 'Sarajevo', 'Trg nezavisnosti 18', '061919809', 'ensar.h', '123'),
+(2, 'Emel', 'Hasanovic', 'Sarajevo', 'Sedrenik 13', '0617785', 'emelg', 'emel'),
+(3, 'Enis', 'Tvrtkovic', 'Sarajevo', 'Briješce', '061454578', 'enki', '123'),
+(4, 'Nermina', 'Salihovic', 'Sarajevo', 'Briješce 57', '06267456', 'nermica', 'sale');
 
 -- --------------------------------------------------------
 
@@ -68,7 +89,14 @@ CREATE TABLE IF NOT EXISTS `narudzbenica` (
   `datum_narudzbe` date DEFAULT NULL,
   PRIMARY KEY (`narudzbenica_id`),
   KEY `kupac_id` (`kupac_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `narudzbenica`
+--
+
+INSERT INTO `narudzbenica` (`narudzbenica_id`, `kupac_id`, `datum_narudzbe`) VALUES
+(2, 2, '2022-04-30');
 
 -- --------------------------------------------------------
 
@@ -83,7 +111,18 @@ CREATE TABLE IF NOT EXISTS `skladiste` (
   `kolicina_stanje` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `artikal_id` (`artikal_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `skladiste`
+--
+
+INSERT INTO `skladiste` (`id`, `artikal_id`, `kolicina_stanje`) VALUES
+(1, 1, 54),
+(2, 2, 31),
+(3, 3, 39),
+(4, 4, 75),
+(5, 5, 20);
 
 -- --------------------------------------------------------
 
@@ -98,9 +137,16 @@ CREATE TABLE IF NOT EXISTS `stavka_narudzbenice` (
   `artikal_id` int(11) DEFAULT NULL,
   `kolicina` int(11) DEFAULT NULL,
   PRIMARY KEY (`stavka_id`),
-  KEY `narudzbenica_id` (`narudzbenica_id`),
-  KEY `artikal_id` (`artikal_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `artikal_id` (`artikal_id`),
+  KEY `stavka_narudzbenice_ibfk_1` (`narudzbenica_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `stavka_narudzbenice`
+--
+
+INSERT INTO `stavka_narudzbenice` (`stavka_id`, `narudzbenica_id`, `artikal_id`, `kolicina`) VALUES
+(1, 2, 1, 1);
 
 --
 -- Constraints for dumped tables
@@ -122,8 +168,8 @@ ALTER TABLE `skladiste`
 -- Constraints for table `stavka_narudzbenice`
 --
 ALTER TABLE `stavka_narudzbenice`
-  ADD CONSTRAINT `stavka_narudzbenice_ibfk_2` FOREIGN KEY (`artikal_id`) REFERENCES `artikal` (`artikal_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `stavka_narudzbenice_ibfk_1` FOREIGN KEY (`narudzbenica_id`) REFERENCES `narudzbenica` (`narudzbenica_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `stavka_narudzbenice_ibfk_1` FOREIGN KEY (`narudzbenica_id`) REFERENCES `narudzbenica` (`narudzbenica_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `stavka_narudzbenice_ibfk_2` FOREIGN KEY (`artikal_id`) REFERENCES `artikal` (`artikal_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,0 +1,18 @@
+C:\Users\Ensar\Desktop\Projektni zadatak\Projektni zadatak\Ensi\obj\x86\Debug\Projektni zadatak.csprojResolveAssemblyReference.cache
+C:\Users\Ensar\Desktop\Projektni zadatak\Projektni zadatak\Ensi\obj\x86\Debug\Ensi.Form1.resources
+C:\Users\Ensar\Desktop\Projektni zadatak\Projektni zadatak\Ensi\obj\x86\Debug\Ensi.Form2.resources
+C:\Users\Ensar\Desktop\Projektni zadatak\Projektni zadatak\Ensi\obj\x86\Debug\Ensi.Form3.resources
+C:\Users\Ensar\Desktop\Projektni zadatak\Projektni zadatak\Ensi\obj\x86\Debug\Ensi.Form4.resources
+C:\Users\Ensar\Desktop\Projektni zadatak\Projektni zadatak\Ensi\obj\x86\Debug\Ensi.Form5.resources
+C:\Users\Ensar\Desktop\Projektni zadatak\Projektni zadatak\Ensi\obj\x86\Debug\Ensi.Login.resources
+C:\Users\Ensar\Desktop\Projektni zadatak\Projektni zadatak\Ensi\obj\x86\Debug\Projekat.Properties.Resources.resources
+C:\Users\Ensar\Desktop\Projektni zadatak\Projektni zadatak\Ensi\obj\x86\Debug\Projektni zadatak.csproj.GenerateResource.Cache
+C:\Users\Ensar\Desktop\Projektni zadatak\Projektni zadatak\Ensi\bin\Debug\Projektni zadatak.exe
+C:\Users\Ensar\Desktop\Projektni zadatak\Projektni zadatak\Ensi\bin\Debug\Projektni zadatak.pdb
+C:\Users\Ensar\Desktop\Projektni zadatak\Projektni zadatak\Ensi\bin\Debug\MySql.Data.dll
+C:\Users\Ensar\Desktop\Projektni zadatak\Projektni zadatak\Ensi\obj\x86\Debug\Projektni zadatak.exe
+C:\Users\Ensar\Desktop\Projektni zadatak\Projektni zadatak\Ensi\obj\x86\Debug\Projektni zadatak.pdb
+C:\Users\Eman\Desktop\Projektni zadatak\Ensi\obj\x86\Debug\Projektni zadatak.exe
+C:\Users\Eman\Desktop\Projektni zadatak\Ensi\obj\x86\Debug\Projektni zadatak.pdb
+C:\Users\Ensar\Desktop\Projektni zadatak\Ensi\obj\x86\Debug\Projektni zadatak.exe
+C:\Users\Ensar\Desktop\Projektni zadatak\Ensi\obj\x86\Debug\Projektni zadatak.pdb
